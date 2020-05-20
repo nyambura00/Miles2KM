@@ -1,4 +1,3 @@
 # miles2km
-
-A flutter application for converting Miles into KM
+My first flutter app for converting Miles-KM. [Here](https://nyambura00.github.io/Miles2KM/)
 
