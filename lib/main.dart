@@ -6,6 +6,8 @@ class Miles2KM extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      ///theme: ThemeData.light(),
+      darkTheme: ThemeData.dark(),
       debugShowCheckedModeBanner: false,
       home: Dash(),
     );
@@ -21,14 +23,16 @@ class _DashState extends State<Dash> {
   //declarations
   var milesValue = 1.0;
   final formulaValue = 1.60934;
-  var kmValue;
+  var kmValue = 1.60934;
   final TextEditingController controller1 = TextEditingController(text: "");
+  String myOutput = "";
   //computing
   void doConversion() {
     setState(() {
       milesValue = double.parse(controller1.text);
       kmValue = milesValue * formulaValue;
     });
+    myOutput = "$milesValue Miles is $kmValue KM";
   }
 
   @override
@@ -60,10 +64,7 @@ class _DashState extends State<Dash> {
               },
             ),
             SizedBox(height: 20.0),
-            Text(
-              '$milesValue Miles is $kmValue KM',
-              style: TextStyle(fontSize: 20.0, color: Colors.red),
-            )
+            Text(myOutput, style: TextStyle(fontSize: 20.0, color: Colors.red))
           ],
         ),
       ),
